@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #10101a;
+  color: #fff;
+  touch-action: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Меню */
+#menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 20, 35, 0.95);
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 340px;
+  z-index: 100;
+  text-align: center;
+}
+
+#menu h2 {
+  color: #00fff5;
+  font-size: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  color: #aaa;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+input:focus {
+  border-color: #00fff5;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #00fff5;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #00b3a8;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #333;
+}
+
+/* HUD */
+#ui {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 18px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#ui h1 {
+  font-size: 18px;
+  color: #00fff5;
+}
+
+#ui p {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 2px;
+}
+
+/* Чат */
+#chat-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  height: 180px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 20;
+  border: 1px solid rgba(0, 255, 245, 0.3);
+}
+
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  word-break: break-word;
+  margin-bottom: 8px;
+}
+
+#chat-messages div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+#chat-input-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 6px;
+  font-size: 12px;
+}
+
+#chat-send-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  flex: none;
+}
+
+/* Сенсорный джойстик */
+#mobile-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 15;
+}
+
+#joystick-zone {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 120px;
+  height: 120px;
+  pointer-events: auto;
+}
+
+#joystick-base {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 255, 245, 0.5);
+  border-radius: 50%;
+  position: relative;
+}
+
+#joystick-stick {
+  width: 50px;
+  height: 50px;
+  background: #00fff5;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  box-shadow: 0 0 10px #00fff5;
+}
+
+#mobile-buttons {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  pointer-events: auto;
+}
+
+#mobile-buttons button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 14px;
+  background: rgba(0, 255, 245, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 245, 0.5);
+}

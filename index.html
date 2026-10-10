@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>3D Multiplayer Arena</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <!-- Главное меню -->
+  <div id="menu">
+    <h2>3D Multiplayer Arena</h2>
+    
+    <div class="field">
+      <label>Ваш никнейм:</label>
+      <input type="text" id="nickname-input" placeholder="Введите ник...">
+    </div>
+
+    <div class="buttons">
+      <button id="btn-create">Создать сервер</button>
+      <button id="btn-join">Присоединиться</button>
+    </div>
+
+    <div id="create-panel" class="panel hidden">
+      <div class="field">
+        <label>Имя сервера:</label>
+        <input type="text" id="server-name-input" placeholder="Мой Сервер">
+      </div>
+      <button id="btn-confirm-create">Запустить сервер</button>
+    </div>
+
+    <div id="join-panel" class="panel hidden">
+      <div class="field">
+        <label>ID сервера:</label>
+        <input type="text" id="join-id-input" placeholder="Введите ID сервера...">
+      </div>
+      <button id="btn-confirm-join">Подключиться</button>
+    </div>
+  </div>
+
+  <!-- Игровой интерфейс -->
+  <div id="ui" class="hidden">
+    <h1 id="ui-server-name">Сервер</h1>
+    <p id="ui-server-id">ID: ...</p>
+    <p id="pc-controls">Управление: <b>WASD</b> — шаг | <b>Пробел</b> — прыжок | <b>ЛКМ</b> — огонь | <b>Enter</b> — чат</p>
+  </div>
+
+  <!-- Чат -->
+  <div id="chat-container" class="hidden">
+    <div id="chat-messages"></div>
+    <div id="chat-input-wrapper">
+      <input type="text" id="chat-input" placeholder="Нажмите Enter для отправки..." maxlength="100">
+      <button id="chat-send-btn">Send</button>
+    </div>
+  </div>
+
+  <!-- Экранный джойстик и кнопки для телефонов -->
+  <div id="mobile-controls" class="hidden">
+    <div id="joystick-zone">
+      <div id="joystick-base">
+        <div id="joystick-stick"></div>
+      </div>
+    </div>
+    <div id="mobile-buttons">
+      <button id="btn-mobile-jump">JUMP</button>
+      <button id="btn-mobile-shoot">FIRE</button>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
